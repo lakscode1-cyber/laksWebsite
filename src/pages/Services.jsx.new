@@ -1,0 +1,69 @@
+import React from 'react';
+import './Services.css';
+
+const services = [
+  { 
+    id: 1,
+    title: 'Software Consulting',
+    desc: 'Lakscode provides expert software consulting to help IT companies make informed technology decisions. Our consultants deliver tailored strategies and solutions that drive business growth and efficiency.'
+  },
+  {
+    id: 2,
+    title: 'IT Manpower Outsourcing',
+    desc: 'Scale your team quickly with Lakscode's IT manpower outsourcing. We supply skilled professionals who integrate seamlessly with your projects, ensuring flexibility and cost-effectiveness for IT companies.'
+  },
+  {
+    id: 3,
+    title: 'Cloud Software Development',
+    desc: 'Lakscode builds modern, scalable software using the latest cloud technologies. Our cloud development services empower IT companies to innovate, reduce costs, and stay ahead in a competitive market.'
+  }
+];
+
+const Services = () => (
+  <main className="services-page">
+    <section className="services-hero">
+      <div className="services-hero-overlay">
+        <h1>Our Services</h1>
+        <p>Professional IT solutions tailored to your business needs</p>
+      </div>
+    </section>
+    <div className="services-content">
+      <div className="services-intro">
+        <h2>What We Offer</h2>
+        <p>At Lakscode, we deliver comprehensive IT solutions to help your business thrive in today's digital landscape.</p>
+      </div>
+      <div className="services-list">
+        {services.map((service) => (
+          <div className="service-card" key={service.id}>
+            <div className="service-icon">
+              {service.id === 1 && 
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 8V12L15 15" stroke="#FF7A00" strokeWidth="2" strokeLinecap="round" />
+                  <circle cx="12" cy="12" r="9" stroke="#FF7A00" strokeWidth="2" />
+                </svg>
+              }
+              {service.id === 2 && 
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 7C16 9.21 14.21 11 12 11C9.79 11 8 9.21 8 7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7Z" stroke="#FF7A00" strokeWidth="2" />
+                  <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#FF7A00" strokeWidth="2" />
+                </svg>
+              }
+              {service.id === 3 && 
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6H20V18H4V6Z" stroke="#FF7A00" strokeWidth="2" />
+                  <path d="M4 10H20" stroke="#FF7A00" strokeWidth="2" />
+                  <path d="M8 14H16" stroke="#FF7A00" strokeWidth="2" />
+                </svg>
+              }
+            </div>
+            <h2>{service.title}</h2>
+            <p>{service.desc}</p>
+            <button className="service-btn">Learn More</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+);
+
+export default Services;

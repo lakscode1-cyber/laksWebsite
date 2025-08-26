@@ -1,0 +1,95 @@
+import React from 'react';
+import './Services.css';
+
+const services = [
+  {
+    title: 'Software Consulting',
+    desc: 'Lakscode provides expert software consulting to help IT companies make informed technology decisions. Our consultants deliver tailored strategies and solutions that drive business growth and efficiency.',
+    icon: '💻',
+    features: ['Strategic Technology Planning', 'Architecture Design', 'Best Practices Implementation', 'Performance Optimization']
+  },
+  {
+    title: 'IT Manpower Outsourcing',
+    desc: 'Scale your team quickly with Lakscode\'s IT manpower outsourcing. We supply skilled professionals who integrate seamlessly with your projects, ensuring flexibility and cost-effectiveness for IT companies.',
+    icon: '👥',
+    features: ['Skilled Developers', 'Project Management', 'Quality Assurance', '24/7 Support']
+  },
+  {
+    title: 'Cloud Software Development',
+    desc: 'Lakscode builds modern, scalable software using the latest cloud technologies. Our cloud development services empower IT companies to innovate, reduce costs, and stay ahead in a competitive market.',
+    icon: '☁️',
+    features: ['AWS/Azure/GCP', 'Microservices Architecture', 'DevOps Integration', 'Scalable Solutions']
+  }
+];
+
+const additionalServices = [
+  { title: 'Digital Transformation', icon: '🚀', desc: 'Modernize your business with cutting-edge technology solutions.' },
+  { title: 'Data Analytics', icon: '📊', desc: 'Transform data into actionable insights for better decision making.' },
+  { title: 'Cybersecurity', icon: '🔒', desc: 'Protect your digital assets with enterprise-grade security solutions.' }
+];
+
+const Services = () => (
+  <main className="services-page">
+    {/* Hero Section */}
+    <section className="services-hero">
+      <div className="services-hero-overlay">
+        <h1>Our Services</h1>
+        <p>Comprehensive IT solutions designed to accelerate your business growth and digital transformation journey.</p>
+      </div>
+    </section>
+
+    {/* Main Content */}
+    <section className="services-content">
+      {/* Introduction */}
+      <div className="services-intro">
+        <h2>Empowering Your Business with <span className="highlight">Expert Solutions</span></h2>
+        <p>At Lakscode, we deliver world-class IT services that help businesses thrive in the digital age. Our comprehensive suite of solutions is designed to meet your unique challenges and drive sustainable growth.</p>
+      </div>
+
+      {/* Main Services */}
+      <div className="services-list">
+        {services.map((service, index) => (
+          <div className="service-card" key={index}>
+            <div className="service-icon">
+              <span className="icon-emoji">{service.icon}</span>
+            </div>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+            <div className="service-features">
+              <h4>Key Features:</h4>
+              <ul>
+                {service.features.map((feature, i) => (
+                  <li key={i}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Additional Services */}
+      <div className="additional-services">
+        <h2>Additional Expertise</h2>
+        <div className="additional-services-grid">
+          {additionalServices.map((service, index) => (
+            <div className="additional-service-card" key={index}>
+              <span className="additional-icon">{service.icon}</span>
+              <h4>{service.title}</h4>
+              <p>{service.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="services-cta">
+        <div className="cta-content">
+          <h2>Ready to Transform Your Business?</h2>
+          <p>Let's discuss how Lakscode can help you achieve your technology goals and drive innovation.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+);
+
+export default Services;
