@@ -76,10 +76,10 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1rem 0 1.6rem; /* Added extra right padding to shift boxes to center */
+  padding: 0 1rem;
   box-sizing: border-box;
   position: relative;
-  left: 8px; /* Shift the entire container slightly right */
+  transform: translateX(-4px); /* Shift slightly left to compensate for visual imbalance */
 }
 
 .hero-stat {
@@ -93,6 +93,7 @@
   flex: 1;
   min-width: 200px;
   max-width: 250px;
+  box-sizing: border-box;
 }
 
 .stat-number {
