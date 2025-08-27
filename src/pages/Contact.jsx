@@ -96,19 +96,19 @@ const Contact = () => {
           <div className="hero-content">
             <h1>Let's Build Something Amazing Together</h1>
             <p>Ready to transform your business with cutting-edge IT solutions? We're here to help you succeed.</p>
-            <div className="hero-stats">
-              <div className="hero-stat">
-                <span className="stat-number">24hrs</span>
-                <span className="stat-label">Response Time</span>
-              </div>
-              <div className="hero-stat">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">Client Satisfaction</span>
-              </div>
-              <div className="hero-stat">
-                <span className="stat-number">50+</span>
-                <span className="stat-label">Projects Delivered</span>
-              </div>
+          </div>
+          <div className="hero-stats">
+            <div className="hero-stat">
+              <span className="stat-number">24hrs</span>
+              <span className="stat-label">Response Time</span>
+            </div>
+            <div className="hero-stat">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Client Satisfaction</span>
+            </div>
+            <div className="hero-stat">
+              <span className="stat-number">50+</span>
+              <span className="stat-label">Projects Delivered</span>
             </div>
           </div>
         </div>
