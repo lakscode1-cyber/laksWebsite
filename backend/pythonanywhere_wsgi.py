@@ -6,9 +6,10 @@
 # The below has been auto-generated for your Flask project
 
 import sys
+import os
 
 # add your project directory to the sys.path
-path = '/home/yourusername/path/to/lakscode-contact-form'
+path = '/home/lakscode/lakscode-contact-form'
 if path not in sys.path:
     sys.path.insert(0, path)
 

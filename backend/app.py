@@ -3,11 +3,15 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
-from dotenv import load_dotenv
 import logging
 
-# Load environment variables from .env file
-load_dotenv()
+# Try to load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+    print("Loaded environment variables from .env file")
+except ImportError:
+    print("python-dotenv not installed, using system environment variables")
 
 app = Flask(__name__)
 
@@ -20,7 +24,14 @@ except ImportError:
     print("WARNING: flask-cors is not installed. Install it with 'pip install flask-cors' for CORS support.")
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),  # Log to console
+        logging.FileHandler('app.log')  # Log to file
+    ]
+)
 logger = logging.getLogger(__name__)
 
 # Email configuration
@@ -274,22 +285,53 @@ def contact():
             all_recipients.append(cc_email)
         
         try:
-            # Setup SMTP server
+            # Log email attempt details (without revealing passwords)
+            logger.info(f"Attempting to send email via {EMAIL_HOST}:{EMAIL_PORT}")
+            logger.info(f"Using account: {EMAIL_HOST_USER}")
+            logger.info(f"Recipients: {all_recipients}")
+            
+            # Setup SMTP server with detailed logging
             server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
+            server.set_debuglevel(1)  # Enable verbose debug output
+            logger.info("SMTP connection established")
+            
+            # Start TLS
             server.starttls()
+            logger.info("TLS started")
+            
+            # Login
             server.login(EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
+            logger.info("Successfully logged in to email server")
             
             # Send email
             server.sendmail(EMAIL_HOST_USER, all_recipients, msg.as_string())
+            logger.info("Email sent successfully")
+            
+            # Close connection
             server.quit()
+            logger.info("SMTP connection closed")
             
             return jsonify({
                 "success": True,
                 "message": "Email sent successfully!"
             }), 200
             
+        except smtplib.SMTPAuthenticationError as e:
+            logger.error(f"SMTP Authentication Error: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "Email authentication failed. Please check your email credentials."
+            }), 500
+            
+        except smtplib.SMTPException as e:
+            logger.error(f"SMTP Error: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": f"SMTP error occurred: {str(e)}"
+            }), 500
+            
         except Exception as e:
-            logger.error(f"Error sending email: {str(e)}")
+            logger.error(f"Unexpected error sending email: {str(e)}")
             return jsonify({
                 "success": False,
                 "error": f"Failed to send email: {str(e)}"
