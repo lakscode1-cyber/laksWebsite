@@ -111,15 +111,15 @@ const Portfolio = () => {
           <div className="hero-content">
             <h1>Our Portfolio</h1>
             <p>Showcasing successful IT transformations and innovative solutions that drive business growth</p>
-            <div className="hero-stats">
-              {stats.map((stat, index) => (
-                <div key={index} className="hero-stat">
-                  <span className="stat-icon">{stat.icon}</span>
-                  <span className="stat-number">{stat.number}</span>
-                  <span className="stat-label">{stat.label}</span>
-                </div>
-              ))}
-            </div>
+          </div>
+          <div className="hero-stats">
+            {stats.map((stat, index) => (
+              <div key={index} className="hero-stat">
+                <span className="stat-icon">{stat.icon}</span>
+                <span className="stat-number">{stat.number}</span>
+                <span className="stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
