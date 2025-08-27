@@ -218,6 +218,38 @@ const Contact = () => {
           </div>
         </section>
 
+        {/* Office Locations Section */}
+        <section className="office-locations">
+          <h2>Our Offices</h2>
+          <div className="offices-grid">
+            <div className="office-card">
+              <div className="office-header">
+                <span className="office-icon">🏢</span>
+                <h3>Corporate Office</h3>
+              </div>
+              <div className="office-address">
+                <p>Plot no 156, Bharathi Nagar,</p>
+                <p>8th cross Street,</p>
+                <p>Thanjavur - 613010,</p>
+                <p>Tamil Nadu, India.</p>
+              </div>
+            </div>
+            
+            <div className="office-card">
+              <div className="office-header">
+                <span className="office-icon">📍</span>
+                <h3>Regional Office</h3>
+              </div>
+              <div className="office-address">
+                <p>No : 32, Third Street,</p>
+                <p>Lakshmi Nagar,</p>
+                <p>Porur, Chennai - 600116,</p>
+                <p>Tamil Nadu - India.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="faq-section">
           <h2>Frequently Asked Questions</h2>
