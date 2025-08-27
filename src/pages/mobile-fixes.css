@@ -1,0 +1,30 @@
+/* Additional fixes for mobile devices */
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px !important; /* Prevents zoom on focus */
+    color: #000000 !important;
+  }
+}
+
+/* Android specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+  }
+}
+
+/* Fix for Chrome autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #000000 !important;
+}

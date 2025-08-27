@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import './mobile-fixes.css'; // Additional fixes for mobile devices
 
 const contactInfo = [
   {
@@ -69,16 +70,55 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', company: '', service: '', message: '' });
+    try {
+      // Send data to Flask backend
+      const response = await fetch('https://lakscode.pythonanywhere.com/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          // Additional emails
+          to: 'contact@lakscode.com',
+          cc: 'lakscode1@gmail.com'
+        }),
+      });
       
+      const data = await response.json();
+      
+      if (response.ok) {
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', company: '', service: '', message: '' });
+        
+        setTimeout(() => {
+          setSubmitStatus('');
+        }, 5000);
+      } else {
+        console.error('Form submission error:', data.error);
+        setIsSubmitting(false);
+        setSubmitStatus('error');
+        
+        setTimeout(() => {
+          setSubmitStatus('');
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      
+      // Display error for a longer time in case of network errors
+      const timeoutDuration = error.message?.includes('fetch') ? 8000 : 5000;
       setTimeout(() => {
         setSubmitStatus('');
-      }, 5000);
-    }, 2000);
+      }, timeoutDuration);
+    }
   };
 
   return (
@@ -209,6 +249,13 @@ const Contact = () => {
                 <div className="success-message">
                   <span className="success-icon">✅</span>
                   Message sent successfully! We'll get back to you soon.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="error-message">
+                  <span className="error-icon">❌</span>
+                  There was an error sending your message. Please try again or contact us directly at <a href="mailto:contact@lakscode.com">contact@lakscode.com</a>.
                 </div>
               )}
             </form>
