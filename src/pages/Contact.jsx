@@ -12,9 +12,9 @@ const contactInfo = [
   {
     icon: '📞',
     title: 'Call Us',
-    detail: '+1 (555) 123-4567',
+    detail: '+919629478813',
     description: 'Mon-Fri from 8am to 6pm',
-    action: 'tel:+15551234567'
+    action: 'tel:+919629478813'
   },
   {
     icon: '💼',
