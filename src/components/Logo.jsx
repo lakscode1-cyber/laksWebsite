@@ -12,15 +12,15 @@ const Logo = () => (
       src={logoImage} 
       alt="Lakscode Logo" 
       style={{ 
-        width: '40px', 
-        height: '40px',
+        width: '55px', 
+        height: '55px',
         objectFit: 'contain',
         flexShrink: 0
       }} 
     />
     <span style={{ 
       fontWeight: 'bold', 
-      fontSize: 'clamp(1.2rem, 4vw, 1.6rem)', 
+      fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', 
       color: '#222', 
       letterSpacing: '0.5px',
       fontFamily: 'Arial, sans-serif',
