@@ -5,9 +5,9 @@ const contactInfo = [
   {
     icon: '📧',
     title: 'Email Us',
-    detail: 'lakscode1@gmail.com',
+    detail: 'contact@lakscode.com',
     description: 'Send us an email anytime',
-    action: 'mailto:lakscode1@gmail.com'
+    action: 'mailto:contact@lakscode.com'
   },
   {
     icon: '📞',
