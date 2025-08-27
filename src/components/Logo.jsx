@@ -1,32 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoImage from '../assets/logo.png';
 
 const Logo = () => (
-  <div style={{ 
-    display: 'flex', 
-    alignItems: 'center', 
-    gap: '0.6rem',
-    minWidth: 'fit-content'
-  }}>
-    <img 
-      src={logoImage} 
-      alt="Lakscode Logo" 
-      style={{ 
-        width: '80px', 
-        height: '80px',
-        objectFit: 'contain',
-        flexShrink: 0
-      }} 
-    />
-    <span style={{ 
-      fontWeight: 'bold', 
-      fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', 
-      color: '#222', 
-      letterSpacing: '0.5px',
-      fontFamily: 'Arial, sans-serif',
-      whiteSpace: 'nowrap'
-    }}>Lakscode</span>
-  </div>
+  <Link to="/" style={{ textDecoration: 'none' }}>
+    <div style={{ 
+      display: 'flex', 
+      alignItems: 'center', 
+      gap: '0.6rem',
+      minWidth: 'fit-content',
+      cursor: 'pointer'
+    }}>
+      <img 
+        src={logoImage} 
+        alt="Lakscode Logo" 
+        style={{ 
+          width: '80px', 
+          height: '80px',
+          objectFit: 'contain',
+          flexShrink: 0
+        }} 
+      />
+      <span style={{ 
+        fontWeight: 'bold', 
+        fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', 
+        color: '#222', 
+        letterSpacing: '0.5px',
+        fontFamily: 'Arial, sans-serif',
+        whiteSpace: 'nowrap'
+      }}>Lakscode</span>
+    </div>
+  </Link>
 );
 
 export default Logo;
