@@ -11,7 +11,7 @@
   height: 100vh;
   width: 100%;
   position: relative;
-  background-image: url('https://i.ibb.co/Y7wLVBh0/image2.jpg');
+  background-image: url('../assets/image2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,13 +23,13 @@
 
 @keyframes slideShow {
   0%, 33% {
-    background-image: url('https://i.ibb.co/Y7wLVBh0/image2.jpg');
+    background-image: url('../assets/image2.jpg');
   }
   34%, 66% {
-    background-image: url('https://i.ibb.co/LhbDsgrv/image1.jpg');
+    background-image: url('../assets/image1.jpg');
   }
   67%, 100% {
-    background-image: url('https://i.ibb.co/sXh16xV/image3.jpg');
+    background-image: url('../assets/image3.jpg');
   }
 }
 
@@ -51,6 +51,27 @@
 .hero-content {
   max-width: 800px;
   animation: fadeInUp 1s ease-out;
+}
+
+.company-name-animation {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.full-company-name {
+  color: #FFD700;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  animation: shimmer 3s infinite;
+  background: linear-gradient(90deg, rgba(255,215,0,0.7) 0%, rgba(255,215,0,1) 50%, rgba(255,215,0,0.7) 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-overlay h1 {
@@ -630,6 +651,30 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    background-position: 0% center;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  }
+  100% {
+    background-position: 200% center;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+  }
+}
+
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -644,6 +689,10 @@
 
 /* Responsive Design */
 @media (max-width: 900px) {
+  .full-company-name {
+    font-size: 1.6rem;
+  }
+
   .hero-overlay h1 {
     font-size: 3rem;
   }
@@ -679,7 +728,7 @@
   }
   
   .cta-btn {
-    width: 250px;
+    width: 100%;
   }
 }
 
@@ -688,8 +737,17 @@
     height: 80vh;
   }
   
+  .full-company-name {
+    font-size: 1.3rem;
+    padding: 0 10px;
+  }
+  
   .hero-overlay h1 {
     font-size: 2.5rem;
+  }
+  
+  .hero-overlay p {
+    font-size: 1.1rem;
   }
   
   .hero-overlay p {
@@ -739,3 +797,4 @@
     font-size: 2rem;
   }
 }
+  

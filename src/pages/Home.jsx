@@ -51,6 +51,9 @@ const Home = () => {
     <section className="hero-section">
       <div className="hero-overlay">
         <div className="hero-content">
+          <div className="company-name-animation">
+            <h2 className="full-company-name">Lakscode Technology Consulting Pvt Ltd</h2>
+          </div>
           <h1>Empower Your IT Journey</h1>
           <p>Lakscode delivers expert consulting, outsourcing, and cloud solutions for modern businesses.</p>
         </div>
