@@ -103,6 +103,10 @@ const Contact = () => {
               <span className="stat-number">50+</span>
               <span className="stat-label">Projects Delivered</span>
             </div>
+            <div className="hero-stat">
+              <span className="stat-number">5+</span>
+              <span className="stat-label">Years Experience</span>
+            </div>
           </div>
         </div>
       </section>
