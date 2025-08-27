@@ -5,9 +5,9 @@ const contactInfo = [
   {
     icon: '📧',
     title: 'Email Us',
-    detail: 'info@lakscode.com',
+    detail: 'lakscode1@gmail.com',
     description: 'Send us an email anytime',
-    action: 'mailto:info@lakscode.com'
+    action: 'mailto:lakscode1@gmail.com'
   },
   {
     icon: '📞',
@@ -17,17 +17,10 @@ const contactInfo = [
     action: 'tel:+15551234567'
   },
   {
-    icon: '📍',
-    title: 'Visit Us',
-    detail: '123 Tech Avenue',
-    description: 'City, State 12345',
-    action: '#'
-  },
-  {
-    icon: '💬',
-    title: 'Live Chat',
-    detail: '24/7 Support',
-    description: 'Get instant assistance',
+    icon: '💼',
+    title: 'LinkedIn',
+    detail: 'Connect with us',
+    description: 'Professional networking',
     action: '#'
   }
 ];
@@ -215,6 +208,31 @@ const Contact = () => {
                 </div>
               )}
             </form>
+          </div>
+        </section>
+
+        {/* Contact Methods Section */}
+        <section className="contact-methods-section">
+          <h2>Get in Touch</h2>
+          <div className="contact-methods-grid">
+            {contactInfo.map((method, index) => (
+              <a
+                key={index}
+                href={method.action}
+                className="contact-method-card"
+                target={method.title === 'LinkedIn' ? '_blank' : '_self'}
+                rel={method.title === 'LinkedIn' ? 'noopener noreferrer' : undefined}
+              >
+                <div className="method-icon">
+                  <span>{method.icon}</span>
+                </div>
+                <div className="method-content">
+                  <h3>{method.title}</h3>
+                  <p className="method-detail">{method.detail}</p>
+                  <p className="method-description">{method.description}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </section>
 
