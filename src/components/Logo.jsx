@@ -1,17 +1,30 @@
 import React from 'react';
+import logoImage from '../assets/logo.png';
 
 const Logo = () => (
-  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="20" cy="20" r="20" fill="#FF7A00"/>
-      <path d="M11 28L20 10L29 28H24L20 19L16 28H11Z" fill="#fff"/>
-    </svg>
+  <div style={{ 
+    display: 'flex', 
+    alignItems: 'center', 
+    gap: '0.6rem',
+    minWidth: 'fit-content'
+  }}>
+    <img 
+      src={logoImage} 
+      alt="Lakscode Logo" 
+      style={{ 
+        width: '40px', 
+        height: '40px',
+        objectFit: 'contain',
+        flexShrink: 0
+      }} 
+    />
     <span style={{ 
       fontWeight: 'bold', 
-      fontSize: '1.6rem', 
+      fontSize: 'clamp(1.2rem, 4vw, 1.6rem)', 
       color: '#222', 
       letterSpacing: '0.5px',
-      fontFamily: 'Arial, sans-serif'
+      fontFamily: 'Arial, sans-serif',
+      whiteSpace: 'nowrap'
     }}>Lakscode</span>
   </div>
 );
