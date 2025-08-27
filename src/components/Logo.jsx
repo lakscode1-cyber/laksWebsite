@@ -12,8 +12,8 @@ const Logo = () => (
       src={logoImage} 
       alt="Lakscode Logo" 
       style={{ 
-        width: '65px', 
-        height: '65px',
+        width: '80px', 
+        height: '80px',
         objectFit: 'contain',
         flexShrink: 0
       }} 
