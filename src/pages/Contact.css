@@ -20,7 +20,7 @@
 }
 
 .contact-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -66,11 +66,11 @@
 }
 
 .hero-stats {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   margin-top: 2rem;
   width: 100%;
   max-width: 900px;
@@ -79,7 +79,6 @@
   padding: 0 1rem;
   box-sizing: border-box;
   position: relative;
-  transform: translateX(-4px); /* Shift slightly left to compensate for visual imbalance */
 }
 
 .hero-stat {
@@ -90,10 +89,8 @@
   border-radius: 15px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  flex: 1;
-  min-width: 200px;
-  max-width: 250px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .stat-number {
@@ -192,7 +189,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #FF7A00;
+  border-color: #ff7a00;
   background: white;
   box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
 }
@@ -204,7 +201,7 @@
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #FF7A00, #ff9500);
+  background: linear-gradient(135deg, #ff7a00, #ff9500);
   color: white;
   border: none;
   border-radius: 12px;
@@ -246,8 +243,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .success-message {
@@ -316,7 +317,7 @@
 .contact-method:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(255, 122, 0, 0.15);
-  border-color: #FF7A00;
+  border-color: #ff7a00;
 }
 
 .method-icon {
@@ -339,7 +340,7 @@
 }
 
 .method-detail {
-  color: #FF7A00;
+  color: #ff7a00;
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
@@ -409,7 +410,7 @@
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  border-left: 4px solid #FF7A00;
+  border-left: 4px solid #ff7a00;
 }
 
 .faq-item:hover {
@@ -488,9 +489,9 @@
 }
 
 .cta-btn.primary {
-  background: #FF7A00;
+  background: #ff7a00;
   color: white;
-  border-color: #FF7A00;
+  border-color: #ff7a00;
 }
 
 .cta-btn.primary:hover {
@@ -528,45 +529,42 @@
   .hero-content h1 {
     font-size: 2.8rem;
   }
-  
+
   .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     max-width: 100%;
     padding: 0 1rem;
+    margin: 2rem auto 0;
   }
-  
+
   .hero-stat {
-    flex: 1;
-    min-width: 150px;
-    max-width: 200px;
     padding: 1.5rem 1rem;
+    width: 100%;
   }
-  
+
   .contact-main {
     margin-bottom: 3rem;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .contact-form-section {
     padding: 2rem;
   }
-  
+
   .faq-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .cta-btn {
     width: 250px;
   }
@@ -577,53 +575,54 @@
     min-height: auto;
     padding: 3rem 0;
   }
-  
+
   .hero-content h1 {
     font-size: 2.2rem;
   }
-  
+
   .hero-content p {
     font-size: 1.1rem;
   }
-  
+
   .hero-stats {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: 400px;
+    margin: 2rem auto 0;
   }
-  
+
   .hero-stat {
     width: 100%;
     max-width: 300px;
-    min-width: auto;
     padding: 1.5rem;
+    justify-self: center;
   }
-  
+
   .content-container {
     padding: 2rem 0.5rem;
   }
-  
+
   .contact-form-section {
     padding: 1.5rem;
   }
-  
+
   .form-header h2 {
     font-size: 1.8rem;
   }
-  
+
   .social-icons {
     gap: 0.5rem;
   }
-  
+
   .social-icon {
     width: 40px;
     height: 40px;
     font-size: 1rem;
   }
-  
+
   .contact-cta {
     padding: 3rem 1.5rem;
     min-height: 250px;
@@ -631,22 +630,22 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .cta-content {
     width: 100%;
     text-align: center;
   }
-  
+
   .cta-content h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .cta-content p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;

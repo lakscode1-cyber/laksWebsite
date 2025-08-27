@@ -69,7 +69,6 @@
   background: linear-gradient(90deg, rgba(255,215,0,0.7) 0%, rgba(255,215,0,1) 50%, rgba(255,215,0,0.7) 100%);
   background-size: 200% auto;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
