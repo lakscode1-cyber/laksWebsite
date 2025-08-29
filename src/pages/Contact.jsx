@@ -22,12 +22,12 @@ const contactInfo = [
     title: 'LinkedIn',
     detail: 'Connect with us',
     description: 'Professional networking',
-    action: '#'
+  action: 'https://www.linkedin.com/company/lakscode-technology-consulting-pvt-ltd/?viewAsMember=true'
   }
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: '💼', url: '#' },
+  { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/company/lakscode-technology-consulting-pvt-ltd/?viewAsMember=true' },
   { name: 'Twitter', icon: '🐦', url: '#' },
   { name: 'GitHub', icon: '💻', url: '#' },
   { name: 'Facebook', icon: '📘', url: '#' }
